@@ -124,17 +124,19 @@
 			updatePriceSlider($this , value)
 		})
 	});
+	
+	var priceInputMax = document.getElementById('price-max');
+	var	priceInputMin = document.getElementById('price-min');
+	
+	if(priceInputMax != null)
+		priceInputMax.addEventListener('change', function(){
+			updatePriceSlider($(this).parent() , this.value)
+		});
 
-	var priceInputMax = document.getElementById('price-max'),
-			priceInputMin = document.getElementById('price-min');
-
-	priceInputMax.addEventListener('change', function(){
-		updatePriceSlider($(this).parent() , this.value)
-	});
-
-	priceInputMin.addEventListener('change', function(){
-		updatePriceSlider($(this).parent() , this.value)
-	});
+	if(priceInputMin != null)
+		priceInputMin.addEventListener('change', function(){
+			updatePriceSlider($(this).parent() , this.value)
+		});
 
 	function updatePriceSlider(elem , value) {
 		if ( elem.hasClass('price-min') ) {
