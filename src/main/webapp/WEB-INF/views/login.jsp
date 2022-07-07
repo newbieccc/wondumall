@@ -24,7 +24,7 @@ session.setAttribute("state", state);
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<title></title>
+<title>-로그인</title>
 
 <!-- Google font -->
 <link
@@ -53,6 +53,8 @@ session.setAttribute("state", state);
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		
+<!-- 로그인 부트스트랩 -->
 
 <!--===============================================================================================-->
 <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
@@ -89,7 +91,9 @@ session.setAttribute("state", state);
 		alert("로그인 정보가 올바르지 않습니다.\n올바른 아이디와 비밀번호를 입력하세요.");
 	</script>
 </c:if>
+
 </head>
+
 <body>
 	<div id="container">
 		<div id="menubar">
@@ -109,7 +113,7 @@ session.setAttribute("state", state);
 						<br>
 						
 						<div class="p-t-31 p-b-9">
-							<span class="txt1"> 아이디 </span>
+							<span class="txt1"> 아이디 (ex) Jex@jex.com </span>
 						</div>
 						<div class="wrap-input100 validate-input"
 							data-validate="Username is required">
@@ -132,7 +136,7 @@ session.setAttribute("state", state);
 						</div>
 
 						<div class="w-full text-center p-t-55">
-							<span class="txt2"> 아직 회원이 아니신가요? </span> <a href="#" class="txt2 bo1"> 회원가입 </a>
+							<span class="txt2"> 아직 회원이 아니신가요? </span> <a href="./join" class="txt2 bo1"> 회원가입 </a>
 						</div>
 					</form>
 				</div>
@@ -140,8 +144,6 @@ session.setAttribute("state", state);
 		</div>
 		</div>
 		
-	
-
 
 	<div id="dropDownSelect1"></div>
 

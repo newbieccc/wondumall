@@ -14,4 +14,8 @@ public class LoginService {
 		return loginDAO.login(dto);
 	}
 
+	public int join(LoginDTO dto) {
+		return loginDAO.join(dto);
+	}
+
 }

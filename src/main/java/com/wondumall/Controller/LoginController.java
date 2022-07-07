@@ -17,6 +17,30 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 	
+	//2.join 화면 불러오기
+	
+	@GetMapping(value = "/join")
+	public String join() {
+		return "join";
+	}
+	@PostMapping(value = "/join")
+	public String join(HttpServletRequest request) {
+		LoginDTO dto = new LoginDTO();
+		dto.setU_email(request.getParameter("email"));
+		dto.setU_name(request.getParameter("name"));
+		dto.setU_pw(request.getParameter("pw"));
+		dto.setU_roadAddress(request.getParameter("roadAddress"));
+		dto.setU_detailAddress(request.getParameter("detailAddress"));
+		
+		int result = loginService.join(dto);
+		
+		if(result == 1) {
+			return "/index.do";
+		}else {
+			return "/login.do";
+		}
+	}
+	
 	//1. /login화면 불러오기
 	@GetMapping(value = "/login.do")
 	public String login() {
