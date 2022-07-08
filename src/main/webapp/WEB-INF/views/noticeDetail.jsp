@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -84,32 +84,62 @@
 		<!-- container -->
 		<div class="container">
 			<table class="table table-bordered">
-				<thead>
-					<tr>
-						<th scope="col">번호</th>
-						<th scope="col">제목</th>
-						<th scope="col">글쓴이</th>
-						<th scope="col">조회수</th>
-						<th scope="col">좋아요</th>
-						<th scope="col">작성일</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="n" items="${noticeList}">
-						<tr>
-							<td>${n.n_no }</td>
-							<td>${n.n_title }</td>
-							<td>${n.u_nickname }</td>
-							<td>${n.n_count }</td>
-							<td>${n.n_like }</td>
-							<td>${n.n_date }</td>
-						</tr>
-					</c:forEach>
-				</tbody>
+				<tr>
+					<th>번호</th>
+					<td>${detail.n_no }
+				</tr>
+				<tr>
+					<th>글쓴이</th>
+					<td>${detail.u_nickname }
+				</tr>
+				<tr>
+					<th>작성일</th>
+					<td>${detail.n_date }
+				</tr>
+				<tr>
+					<th>조회수</th>
+					<td>${detail.n_count }
+				</tr>
+				<tr>
+					<th>좋아요</th>
+					<td>${detail.n_like }
+				</tr>
+				<tr>
+					<th>내용</th>
+					<td>${detail.n_content }
+				</tr>
+				<tr>
+					<th>댓글</th>
+					<td>
+						<c:if test="${sessionScope.nickname ne null }">
+							<div>
+								<form action="./noticeComment.do" method="post">
+									<input type="hidden" name="n_no" value="${detail.n_no }">
+									<textarea name="nc_comment" required></textarea>
+									<input type="hidden" name="pageNo" value="${pageNo }">
+									<input type="hidden" name="u_nickname" value="${sessionScope.nickname}">
+									<button type="submit">댓글쓰기</button>
+								</form>
+							</div>
+						</c:if>
+						<c:choose>
+							<c:when test="${fn:length(commentList) gt 0 }">
+								<c:forEach var="c" items="${commentList }">
+									<div>
+										${c.u_nickname } / ${c.nc_date }
+									</div>
+									<div>
+										${c.nc_comment }
+									</div>
+								</c:forEach>
+							</c:when>
+							<c:otherwise>
+								댓글이 없습니다.
+							</c:otherwise>
+						</c:choose>
+					</td>
+				</tr>
 			</table>
-			<div style="text-align: center;">
-				<ui:pagination paginationInfo="${paginationInfo}" type="text" jsFunction="linkPage" />
-			</div>
 		</div>
 		<!-- /container -->
 	</div>

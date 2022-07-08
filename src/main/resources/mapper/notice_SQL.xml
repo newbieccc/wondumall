@@ -15,6 +15,8 @@
 	</select>
 	
 	<select id="getDetail" resultType="noticeDTO" parameterType="integer">
-		SELECT * FROM notice WHERE n_no = #{n_no}
+		SELECT notice.*, user.u_nickname FROM notice
+		JOIN user ON user.u_no = notice.u_no
+		WHERE n_no = #{n_no}
 	</select>
 </mapper>

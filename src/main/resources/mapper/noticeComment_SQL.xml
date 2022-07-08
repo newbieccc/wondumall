@@ -1,0 +1,16 @@
+<?xml version="1.0"	encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"	
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="noticeComment">
+	<insert id="writeComment">
+		INSERT INTO notice_comment(nc_comment, u_no, n_no)
+		VALUES(#{nc_comment}, (SELECT u_no FROM user WHERE u_nickname=#{u_nickname}), #{n_no})
+	</insert>
+
+	<select id="getCommentList" parameterType="integer" resultType="noticeCommentDTO">
+		SELECT notice_comment.*, user.u_nickname FROM notice_comment
+		JOIN user ON user.u_no = notice_comment.u_no
+		WHERE n_no = #{n_no}
+	</select>	
+</mapper>

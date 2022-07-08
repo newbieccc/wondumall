@@ -3,19 +3,25 @@ package com..Controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com..DTO.NoticecommentDTO;
+import com..Service.NoticeCommentService;
 import com..Service.NoticeService;
 
 import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 
 @Controller
 public class NoticeController {
-	@Autowired NoticeService noticeService;
+	@Autowired private NoticeService noticeService;
+	@Autowired private NoticeCommentService noticeCommentService;
 	
 	@GetMapping("/notice.do")
 	public ModelAndView notice(@RequestParam(name = "pageNo", required = false, defaultValue = "1") int pageNo) {
@@ -34,13 +40,28 @@ public class NoticeController {
 		
 		mv.addObject("noticeList", noticeService.getNoticeList(map));
 		mv.addObject("paginationInfo", paginationInfo);
+		mv.addObject("pageNo", paginationInfo.getCurrentPageNo());
 		return mv;
 	}
 	
 	@GetMapping("/noticeDetail.do")
-	public ModelAndView noticeDetail(@RequestParam("n_no") int n_no) {
+	public ModelAndView noticeDetail(@RequestParam("n_no") int n_no, @RequestParam("pageNo") int pageNo) {
 		ModelAndView mv = new ModelAndView("noticeDetail");
 		mv.addObject("detail", noticeService.getDetail(n_no));
+		mv.addObject("pageNo", pageNo);
+		mv.addObject("commentList", noticeCommentService.getCommentList(n_no));
 		return mv;
+	}
+	
+	@PostMapping("/noticeComment.do")
+	public void noticeCommentWrite(NoticecommentDTO noticecommentDTO, @RequestParam("pageNo") int pageNo, HttpServletResponse response) throws Exception{
+		
+		int result = noticeCommentService.writeComment(noticecommentDTO);
+		response.setContentType("text/html; charset=UTF-8");
+		if(result>0) {
+			response.getWriter().println("<script> alert('댓글쓰기에 성공했습니다'); location.href='./noticeDetail.do?n_no="+ noticecommentDTO.getN_no() + "&pageNo=" + pageNo + "'</script>");
+		} else {
+			response.getWriter().println("<script> alert('댓글쓰기에 실패했습니다'); location.href='./noticeDetail.do?n_no="+ noticecommentDTO.getN_no() + "&pageNo=" + pageNo + "'</script>");
+		}
 	}
 }
