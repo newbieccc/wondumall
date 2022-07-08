@@ -127,7 +127,7 @@
 					</div>
 					<!-- /section title -->
 
-					${productList}
+					merge test : ${productList}
 					<!-- Products tab & slick -->
 					<div class="col-md-12">
 						<div class="row">
