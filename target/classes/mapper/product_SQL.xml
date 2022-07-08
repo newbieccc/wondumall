@@ -6,6 +6,9 @@
 	<select id="productList" parameterType="categoryDTO" resultType="productDTO">
 		select * 
 		from product
-		WHERE cate_no=#{cate_no};
+		<if test="cate_no != 1">
+			WHERE cate_no=#{cate_no};
+		</if>
+		
 	</select>
 </mapper>

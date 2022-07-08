@@ -49,7 +49,6 @@
 			<c:import url="./nav.jsp"></c:import>
 		</nav>
 		<!-- /NAVIGATION -->
-
 		<!-- SECTION -->
 		<div class="section">
 			<!-- container -->
@@ -126,6 +125,8 @@
 						</div>
 					</div>
 					<!-- /section title -->
+					
+					${productList}
 
 					merge test : ${productList}
 					<!-- Products tab & slick -->
