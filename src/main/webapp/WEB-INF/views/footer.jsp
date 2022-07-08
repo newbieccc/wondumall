@@ -52,8 +52,8 @@
 				<div class="footer">
 					<h3 class="footer-title">Service</h3>
 					<ul class="footer-links">
-						<li><a href="#">My Account</a></li>
-						<li><a href="#">View Cart</a></li>
+						<li><a href="#">내 계정</a></li>
+						<li><a href="#">장바구니</a></li>
 						<li><a href="#">Wishlist</a></li>
 						<li><a href="#">Track My Order</a></li>
 						<li><a href="#">Help</a></li>
