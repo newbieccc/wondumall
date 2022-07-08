@@ -16,11 +16,6 @@ public class IndexController {
 		return "blank";
 	}
 	
-	@GetMapping(value = "/checkout.do")
-	public String checkout() {
-		return "checkout";
-	}
-	
 	@GetMapping(value = "/product.do")
 	public String product() {
 		return "product";
@@ -30,4 +25,5 @@ public class IndexController {
 	public String store() {
 		return "store";
 	}
+	
 }
