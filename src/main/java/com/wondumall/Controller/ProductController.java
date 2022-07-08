@@ -6,19 +6,20 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com..DTO.CategoryDTO;
 import com..DTO.ProductDTO;
-import com..Service.CategoryService;
+import com..Service.ProductService;
 import com..Util.Util;
 
 @Controller
-public class CategoryController {
+public class ProductController {
 	
 	@Autowired
-	private CategoryService categoryService;
+	private ProductService productService;
 	
 	@Autowired
 	private Util util;
@@ -37,7 +38,7 @@ public class CategoryController {
 		dto.setCate_no(cate_no);
 		
 		//물품리스트를 List에 담아서 jsp에 반환
-		List<ProductDTO> productList = categoryService.productList(dto);
+		List<ProductDTO> productList = productService.productList(dto);
 		
 		mv.addObject("productList", productList);
 		mv.addObject("cate_no",cate_no);

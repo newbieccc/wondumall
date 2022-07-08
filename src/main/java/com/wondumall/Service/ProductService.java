@@ -5,18 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com..DAO.CategoryDAO;
+import com..DAO.ProductDAO;
 import com..DTO.CategoryDTO;
 import com..DTO.ProductDTO;
 
 @Service
-public class CategoryService {
+public class ProductService {
 	
 	@Autowired
-	private CategoryDAO categoryDAO;
+	private ProductDAO productDAO;
 
 	public List<ProductDTO> productList(CategoryDTO dto) {
-		return categoryDAO.productList(dto);
+		return productDAO.productList(dto);
 	}
 
 }

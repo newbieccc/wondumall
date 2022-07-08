@@ -7,12 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com..DTO.CategoryDTO;
+import com..DTO.ProductDTO;
 
 @Repository
-public class CategoryDAO {
-	@Autowired SqlSession sqlSession;
+public class ProductDAO {
 	
-	public List<CategoryDTO> getCategoryList(){
-		return sqlSession.selectList("category.getCategoryList");
+	@Autowired
+	private SqlSession sqlSession;
+
+	public List<ProductDTO> productList(CategoryDTO dto) {
+		return sqlSession.selectList("product.productList", dto);
 	}
+
 }
