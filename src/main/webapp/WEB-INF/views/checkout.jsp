@@ -102,57 +102,8 @@
 							<div class="form-group">
 								<input class="input" type="tel" id="o_tel" name="o_tel" placeholder="전화번호">
 							</div>
-							<div class="form-group">
-								<div class="input-checkbox">
-									<input type="checkbox" id="create-account">
-									<label for="create-account">
-										<span></span>
-										Create Account?
-									</label>
-									<div class="caption">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-										<input class="input" type="password" name="password" placeholder="Enter Your Password">
-									</div>
-								</div>
-							</div>
 						</div>
 						<!-- /Billing Details -->
-
-						<!-- Shiping Details -->
-						<div class="shiping-details">
-							<div class="section-title">
-								<h3 class="title">Shiping address</h3>
-							</div>
-							<div class="input-checkbox">
-								<input type="checkbox" id="shiping-address">
-								<label for="shiping-address">
-									<span></span>
-									Ship to a diffrent address?
-								</label>
-								<div class="caption">
-									<div class="form-group">
-										<input class="input" type="text" name="o_name" placeholder="이름">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" id="o_postcode" name="o_postcode" placeholder="우편번호">
-										<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" id="o_roadAddress" name="o_roadAddress" placeholder="도로명주소">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" id="o_extraAddress" name="o_extraAddress" placeholder="참고항목">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" id="o_detailAddress" name="o_detailAddress" placeholder="상세주소">
-									</div>
-									<div class="form-group">
-										<input class="input" type="tel" name="o_tel" placeholder="전화번호">
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /Shiping Details -->
 
 						<!-- Order notes -->
 						<div class="order-notes">
