@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!-- TOP HEADER -->
+
 <div id="top-header">
 	<div class="container">
 		<ul class="header-links pull-left">
@@ -11,9 +12,9 @@
 					Stonecoal Road</a></li>
 		</ul>
 		<ul class="header-links pull-right">
+			<li><a href="#"><i class="fa fa-users"></i> 커뮤니티</a></li>
 			<li><a href="#"><i class="fa fa-dollar"></i> WON</a></li>
-			<li><a href="./login.do"><i class="fa fa-user-o"></i> 내
-					계정</a></li>
+			<li><a href="./login.do"><i class="fa fa-user-o"></i> 내 계정</a></li>
 		</ul>
 	</div>
 </div>
