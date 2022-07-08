@@ -11,9 +11,9 @@
 					Stonecoal Road</a></li>
 		</ul>
 		<ul class="header-links pull-right">
-			<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-			<li><a href="./login.do"><i class="fa fa-user-o"></i> My
-					Account</a></li>
+			<li><a href="#"><i class="fa fa-dollar"></i> WON</a></li>
+			<li><a href="./login.do"><i class="fa fa-user-o"></i> 내
+					계정</a></li>
 		</ul>
 	</div>
 </div>
