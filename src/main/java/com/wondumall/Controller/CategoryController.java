@@ -27,6 +27,7 @@ public class CategoryController {
 	public ModelAndView category(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("category");
 		
+		//물품마다 카테고리로 분류하기 위한 cate_no;
 		int cate_no = 1;
 		if((request.getParameter("cate_no")) != null) {
 			cate_no = util.str2Int(request.getParameter("cate_no"));
@@ -35,6 +36,7 @@ public class CategoryController {
 		CategoryDTO dto = new CategoryDTO();
 		dto.setCate_no(cate_no);
 		
+		//물품리스트를 List에 담아서 jsp에 반환
 		List<ProductDTO> productList = categoryService.productList(dto);
 		
 		mv.addObject("productList", productList);
