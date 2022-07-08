@@ -96,9 +96,16 @@ session.setAttribute("state", state);
 
 <body>
 	<div id="container">
-		<div id="menubar">
-			<c:import url="header.jsp" />
-		</div>
+		<header>
+			<c:import url="./header.jsp"></c:import>
+		</header>
+		<!-- /HEADER -->
+
+		<!-- NAVIGATION -->
+		<nav id="navigation">
+			<c:import url="./nav.jsp"></c:import>
+		</nav>
+		
 		<div class="limiter">
 			<div class="container-login100"
 				style="background-image: url('images/bg-01.jpg');">
@@ -163,6 +170,20 @@ session.setAttribute("state", state);
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<!--===============================================================================================-->
 	<script src="js/loginmain.js"></script>
+	
+			<!-- FOOTER -->
+		<footer id="footer">
+			<c:import url="./footer.jsp"></c:import>
+		</footer>
+		<!-- /FOOTER -->
+
+		<!-- jQuery Plugins -->
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/slick.min.js"></script>
+		<script src="./js/nouislider.min.js"></script>
+		<script src="./js/jquery.zoom.min.js"></script>
+		<script src="./js/main.js"></script>
 
 </body>
 </html>

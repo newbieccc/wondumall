@@ -12,15 +12,12 @@ body {
 }
 
 .joinForm {
-  position:absolute;
+   margin: 0 auto;
   width:400px;
-  height:400px;
   padding: 30px, 20px;
   background-color:#FFFFFF;
   text-align:center;
-  top:40%;
-  left:50%;
-  transform: translate(-50%,-50%);
+  /* transform: translate(-50%,-50%); */
   border-radius: 15px;
 }
 
@@ -37,7 +34,7 @@ body {
 
 
 .email, .pw, .name, 
-.roadAddress, .detailAddress {
+.roadAddress, .detailAddress, .postcode {
   width: 100%;
   border:none;
   outline:none;
@@ -45,6 +42,9 @@ body {
   font-size:16px;
   height:25px;
   background: none;
+}
+.postbtn{
+	left: 70%;
 }
 
 .btn {
