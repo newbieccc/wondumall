@@ -1,0 +1,16 @@
+<?xml version="1.0"	encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"	
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="notice">
+	<select id="getCount" resultType="integer">
+		SELECT COUNT(*) FROM notice WHERE n_del = 0
+	</select>
+	
+	<select id="getNoticeList" parameterType="map" resultType="noticeDTO">
+		SELECT notice.*, user.u_nickname FROM notice 
+		JOIN user ON user.u_no = notice.u_no
+		WHERE n_del = 0
+		LIMIT #{firstIndex}, #{recordCountPerPage}
+	</select>
+</mapper>
