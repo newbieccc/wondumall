@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com..DTO.LoginDTO;
 import com..Service.LoginService;
@@ -15,6 +17,21 @@ public class LoginController {
 	
 	@Autowired
 	private LoginService loginService;
+	
+	@PostMapping(value = "/checkID") //ResposeBody => 결과값을 내상태에서 출력
+	public @ResponseBody String checkID(LoginDTO dto) {
+		String result = "1";
+		//db에게 물어보기 count(*)사용
+		
+		/*
+		 * int count = loginService.checkID(request.getParameter("eamil"));
+		 * 
+		 * result = String.valueOf(count);
+		 */
+		
+		return result;
+	}
+	
 	
 	//2.join 화면 불러오기
 	
