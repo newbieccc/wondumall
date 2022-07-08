@@ -39,6 +39,14 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+<style>
+	th, td{
+		text-align: center;
+	}
+	td:nth-child(2){
+		text-align: left;
+	}
+</style>
 <script type="text/javascript">
 	function linkPage(pageNo) {
 		location.href = "./notice.do?pageNo=" + pageNo;
@@ -59,10 +67,9 @@
 			<div id="responsive-nav">
 				<!-- NAV -->
 				<ul class="main-nav nav navbar-nav" id="nav">
-					<li><a href="#">공지사항</a></li>
-					<li><a href="#">자유게시판</a></li>
+					<li><a href="./notice.do">공지사항</a></li>
+					<li><a href="./board.do">자유게시판</a></li>
 					<li><a href="#">질문게시판</a></li>
-					<li><a href="#">Q&A</a></li>
 					<li><a href="#">자주묻는질문</a></li>
 					<li><a href="#">실시간문의</a></li>
 				</ul>
@@ -76,25 +83,29 @@
 	<div class="section">
 		<!-- container -->
 		<div class="container">
-			<table class="table">
-				<tr>
-					<th>번호</th>
-					<th>제목</th>
-					<th>글쓴이</th>
-					<th>조회수</th>
-					<th>좋아요</th>
-					<th>작성일</th>
-				</tr>
-				<c:forEach var="n" items="${noticeList}">
+			<table class="table table-bordered">
+				<thead>
 					<tr>
-						<td>${n.n_no }</td>
-						<td>${n.n_title }</td>
-						<td>${n.u_nickname }</td>
-						<td>${n.n_count }</td>
-						<td>${n.n_like }</td>
-						<td>${n.n_date }</td>
+						<th scope="col">번호</th>
+						<th scope="col">제목</th>
+						<th scope="col">글쓴이</th>
+						<th scope="col">조회수</th>
+						<th scope="col">좋아요</th>
+						<th scope="col">작성일</th>
 					</tr>
-				</c:forEach>
+				</thead>
+				<tbody>
+					<c:forEach var="n" items="${noticeList}">
+						<tr>
+							<td>${n.n_no }</td>
+							<td>${n.n_title }</td>
+							<td>${n.u_nickname }</td>
+							<td>${n.n_count }</td>
+							<td>${n.n_like }</td>
+							<td>${n.n_date }</td>
+						</tr>
+					</c:forEach>
+				</tbody>
 			</table>
 			<div style="text-align: center;">
 				<ui:pagination paginationInfo="${paginationInfo}" type="text" jsFunction="linkPage" />

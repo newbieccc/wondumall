@@ -49,7 +49,7 @@
 </style>
 <script type="text/javascript">
 	function linkPage(pageNo) {
-		location.href = "./notice.do?pageNo=" + pageNo;
+		location.href = "./board.do?pageNo=" + pageNo;
 	}
 </script>
 </head>
@@ -95,14 +95,14 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="n" items="${noticeList}">
+					<c:forEach var="b" items="${boardList}">
 						<tr>
-							<td>${n.n_no }</td>
-							<td>${n.n_title }</td>
-							<td>${n.u_nickname }</td>
-							<td>${n.n_count }</td>
-							<td>${n.n_like }</td>
-							<td>${n.n_date }</td>
+							<td>${b.b_no }</td>
+							<td>${b.b_title }</td>
+							<td>${b.u_nickname }</td>
+							<td>${b.b_count }</td>
+							<td>${b.b_like }</td>
+							<td>${b.b_date }</td>
 						</tr>
 					</c:forEach>
 				</tbody>
