@@ -10,7 +10,7 @@ import com..DTO.CategoryDTO;
 import com..DTO.ProductDTO;
 
 @Repository
-public class CategoryDAO {
+public class ProductDAO {
 	
 	@Autowired
 	private SqlSession sqlSession;
