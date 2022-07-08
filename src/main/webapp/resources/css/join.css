@@ -33,7 +33,7 @@ body {
 }
 
 
-.email, .pw, .name, 
+.email, .pw, .name, .nickname, 
 .roadAddress, .detailAddress, .postcode {
   width: 100%;
   border:none;

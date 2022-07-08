@@ -56,41 +56,42 @@
 
 	<div id="section">
 		<div id="container">
-			<form action="doJoin" method="POST" class="joinForm"
+			<form action="./join.do" method="POST" class="joinForm"
 				onsubmit="DoJoinForm__submit(this); return false;">
 
 				<h2>회원가입</h2>
 				<div class="textForm">
-					<input name="loginId" type="text" class="email"
-						placeholder="아이디(이메일 형식)" />
+					<input name="u_email" type="text" class="email" placeholder="아이디(이메일 형식)" />
 				</div>
 				<div class="textForm">
-					<input name="loginPw" type="password" class="pw" placeholder="비밀번호">
+					<input name="u_pw" type="password" class="pw" placeholder="비밀번호">
 				</div>
 				<div class="textForm">
-					<input name="loginPwConfirm" type="password" class="pw"
-						placeholder="비밀번호 확인">
+					<input name="loginPwConfirm" type="password" class="pw" placeholder="비밀번호 확인">
 				</div>
 				<div class="textForm">
-					<input name="name" type="password" class="name" placeholder="이름">
+					<input name="u_name" type="text" class="name" placeholder="이름">
+				</div>
+				<div class="textForm">
+					<input name="u_nickname" type="text" class="nickname" placeholder="닉네임">
 				</div>
 				
 				<div>
 				
 				<div class="textForm">
-					<input type="text" id="sample6_postcode" class="postcode" placeholder="우편번호" type="button" onclick="sample6_execDaumPostcode()" class="postbtn" value="우편번호 찾기 Click">
+					<input type="text" id="sample6_postcode" class="postcode"  name="u_postcode" placeholder="우편번호" type="button" onclick="sample6_execDaumPostcode()" class="postbtn" value="우편번호 찾기 Click">
 					<!-- <input type="button" onclick="sample6_execDaumPostcode()" class="postbtn" value="우편번호 찾기"> -->
 				</div> 
 
 
 				<div class="textForm">
-					<input type="text" id="sample6_address" class="roadAddress" placeholder="주소"><br>
+					<input type="text" id="sample6_address" class="roadAddress" name="u_roadAddress" placeholder="주소"><br>
 				</div>
 				<div class="textForm">
-					<input type="text" id="sample6_detailAddress" class="detailAddress" placeholder="상세주소">
+					<input type="text" id="sample6_detailAddress" class="detailAddress" name="u_detailAddress" placeholder="상세주소">
 				</div>
 				<div class="textForm">
-					<input type="text" id="sample6_extraAddress" class="roadAddress" placeholder="참고항목">
+					<input type="text" id="sample6_extraAddress" class="roadAddress"  name="u_extraAddress" placeholder="참고항목">
 				</div>
 
 					<script

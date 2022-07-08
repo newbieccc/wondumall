@@ -1,6 +1,5 @@
 package com..Controller;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,25 +18,19 @@ public class LoginController {
 	
 	//2.join 화면 불러오기
 	
-	@GetMapping(value = "/join")
+	@GetMapping(value = "/join.do")
 	public String join() {
 		return "join";
 	}
-	@PostMapping(value = "/join")
-	public String join(HttpServletRequest request) {
-		LoginDTO dto = new LoginDTO();
-		dto.setU_email(request.getParameter("email"));
-		dto.setU_name(request.getParameter("name"));
-		dto.setU_pw(request.getParameter("pw"));
-		dto.setU_roadAddress(request.getParameter("roadAddress"));
-		dto.setU_detailAddress(request.getParameter("detailAddress"));
+	@PostMapping(value = "/join.do")
+	public String join(LoginDTO dto) {
 		
 		int result = loginService.join(dto);
 		
 		if(result == 1) {
-			return "/index.do";
+			return "./login";
 		}else {
-			return "/login.do";
+			return "./join";
 		}
 	}
 	
@@ -47,26 +40,20 @@ public class LoginController {
 		return "login";
 	}
 	
-	//1. 로그인 로직 처리하기
+	//1. 로그인 로직 처리하기 일반로그인(SNS X)
 	@PostMapping(value = "/login.do")
-	public String login(HttpServletRequest request) {
-		String email = request.getParameter("email");
-		String pw = request.getParameter("pw");
+	public String login(LoginDTO dto, HttpSession session) {
 		
-		//dto에 담아서 데이터베이스로 보내기
-		LoginDTO dto = new LoginDTO();
-		dto.setU_email(email);
-		dto.setU_pw(pw);
+		dto.setU_provider("");
 		
 		//Service DAO 도 만들기
 		dto = loginService.login(dto);
 		if(dto != null) {
 			//정상 로그인 = 세션 만들고
-			HttpSession session =  request.getSession();
 			session.setMaxInactiveInterval(15*60); //초단위로 세션 유지시간 지정
-			session.setAttribute("email", email);
+			session.setAttribute("email", dto.getU_email());
 			
-			return "redirect:/index";
+			return "redirect:/";
 		}else {
 			//비정상 로그인 = 다시 로그인 하세요.
 			return "redirect:/login?error=1254";

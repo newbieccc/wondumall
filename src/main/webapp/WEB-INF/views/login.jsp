@@ -110,7 +110,7 @@ session.setAttribute("state", state);
 			<div class="container-login100"
 				style="background-image: url('images/bg-01.jpg');">
 				<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-					<form class="login100-form validate-form flex-sb flex-w">
+					<form action="./login.do" method="post" class="login100-form validate-form flex-sb flex-w">
 						<span class="login100-form-title p-b-53"> 로그인 같이할수있다리 </span> 
 						<a href="<%=apiURL%>" class="btn-google m-b-20"><img  src="./img/btnG_아이콘원형.png" aria-hidden="true"/>aver</a>
 					<!-- 	<a href="#" class="btn-face m-b-20"> <i class="fa fa-facebook-official"></i> Facebook </a> --> 
@@ -124,7 +124,7 @@ session.setAttribute("state", state);
 						</div>
 						<div class="wrap-input100 validate-input"
 							data-validate="Username is required">
-							<input class="input100" type="text" name="username"> <span
+							<input class="input100" type="text" name="u_email"> <span
 								class="focus-input100"></span>
 						</div>
 
@@ -134,16 +134,16 @@ session.setAttribute("state", state);
 						</div>
 						<div class="wrap-input100 validate-input"
 							data-validate="Password is required">
-							<input class="input100" type="password" name="pass"> <span
+							<input class="input100" type="password" name="u_pw"> <span
 								class="focus-input100"></span>
 						</div>
 
 						<div class="container-login100-form-btn m-t-17">
-							<button class="login100-form-btn">로그인</button>
+							<button type="submit" class="login100-form-btn">로그인</button>
 						</div>
 
 						<div class="w-full text-center p-t-55">
-							<span class="txt2"> 아직 회원이 아니신가요? </span> <a href="./join" class="txt2 bo1"> 회원가입 </a>
+							<span class="txt2"> 아직 회원이 아니신가요? </span> <a href="./join.do" class="txt2 bo1"> 회원가입 </a>
 						</div>
 					</form>
 				</div>
