@@ -13,4 +13,8 @@
 		WHERE n_del = 0
 		LIMIT #{firstIndex}, #{recordCountPerPage}
 	</select>
+	
+	<select id="getDetail" resultType="noticeDTO" parameterType="integer">
+		SELECT * FROM notice WHERE n_no = #{n_no}
+	</select>
 </mapper>

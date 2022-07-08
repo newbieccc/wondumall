@@ -36,4 +36,11 @@ public class NoticeController {
 		mv.addObject("paginationInfo", paginationInfo);
 		return mv;
 	}
+	
+	@GetMapping("/noticeDetail.do")
+	public ModelAndView noticeDetail(@RequestParam("n_no") int n_no) {
+		ModelAndView mv = new ModelAndView("noticeDetail");
+		mv.addObject("detail", noticeService.getDetail(n_no));
+		return mv;
+	}
 }

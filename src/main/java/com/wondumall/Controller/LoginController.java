@@ -68,7 +68,7 @@ public class LoginController {
 		if(dto != null) {
 			//정상 로그인 = 세션 만들고
 			session.setMaxInactiveInterval(15*60); //초단위로 세션 유지시간 지정
-			session.setAttribute("email", dto.getU_email());
+			session.setAttribute("nickname", dto.getU_nickname());
 			
 			return "redirect:/";
 		}else {

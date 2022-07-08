@@ -96,7 +96,7 @@
 				</thead>
 				<tbody>
 					<c:forEach var="n" items="${noticeList}">
-						<tr onclick="location.href='./noticeDetail.do?n_no=${n.n_no}'">
+						<tr>
 							<td>${n.n_no }</td>
 							<td>${n.n_title }</td>
 							<td>${n.u_nickname }</td>
