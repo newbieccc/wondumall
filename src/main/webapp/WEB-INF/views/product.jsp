@@ -551,12 +551,6 @@
 		</div>
 		<!-- /Section -->
 
-		<!-- NEWSLETTER -->
-		<div id="newsletter" class="section">
-			<c:import url="./newsletter.jsp"></c:import>
-		</div>
-		<!-- /NEWSLETTER -->
-
 		<!-- FOOTER -->
 		<footer id="footer">
 			<c:import url="./footer.jsp"></c:import>

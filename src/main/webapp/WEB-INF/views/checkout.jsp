@@ -57,9 +57,9 @@
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="breadcrumb-header">Checkout</h3>
+						<h3 class="breadcrumb-header">결제주문</h3>
 						<ul class="breadcrumb-tree">
-							<li><a href="#">Home</a></li>
+							<li><a href="./">Home</a></li>
 							<li class="active">Checkout</li>
 						</ul>
 					</div>
@@ -81,7 +81,7 @@
 						<!-- Billing Details -->
 						<div class="billing-details">
 							<div class="section-title">
-								<h3 class="title">Billing address</h3>
+								<h3 class="title">청구지</h3>
 							</div>
 							<div class="form-group">
 								<input class="input" type="text" id="o_name" name="o_name" placeholder="이름">
@@ -92,6 +92,9 @@
 							</div>
 							<div class="form-group">
 								<input class="input" type="text" id="o_roadAddress" name="o_roadAddress" placeholder="도로명주소">
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" id="o_extraAddress" name="o_extraAddress" placeholder="참고항목">
 							</div>
 							<div class="form-group">
 								<input class="input" type="text" id="o_detailAddress" name="o_detailAddress" placeholder="상세주소">
@@ -161,11 +164,11 @@
 					<!-- Order Details -->
 					<div class="col-md-5 order-details">
 						<div class="section-title text-center">
-							<h3 class="title">Your Order</h3>
+							<h3 class="title">주문</h3>
 						</div>
 						<div class="order-summary">
 							<div class="order-col">
-								<div><strong>PRODUCT</strong></div>
+								<div><strong>제품</strong></div>
 								<div><strong>TOTAL</strong></div>
 							</div>
 							<div class="order-products">
@@ -179,11 +182,11 @@
 								</div>
 							</div>
 							<div class="order-col">
-								<div>Shiping</div>
+								<div>배송</div>
 								<div><strong>FREE</strong></div>
 							</div>
 							<div class="order-col">
-								<div><strong>TOTAL</strong></div>
+								<div><strong>총금액</strong></div>
 								<div><strong class="order-total">$2940.00</strong></div>
 							</div>
 						</div>
@@ -226,7 +229,7 @@
 								I've read and accept the <a href="#">terms & conditions</a>
 							</label>
 						</div>
-						<a href="#" class="primary-btn order-submit">Place order</a>
+						<a href="#" class="primary-btn order-submit">결제</a>
 					</div>
 					<!-- /Order Details -->
 				</div>
@@ -235,12 +238,6 @@
 			<!-- /container -->
 		</div>
 		<!-- /SECTION -->
-
-		<!-- NEWSLETTER -->
-		<div id="newsletter" class="section">
-			<c:import url="./newsletter.jsp"></c:import>
-		</div>
-		<!-- /NEWSLETTER -->
 
 		<!-- FOOTER -->
 		<footer id="footer">
