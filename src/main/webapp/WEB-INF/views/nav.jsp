@@ -12,7 +12,7 @@
 				var temp = '';
 				
 				$.each(res, function(index,data){
-					temp += '<li><a href="#">' + data.category + '</a></li>'
+					temp += '<li><a href="./category.do?cate_no=' + data.cate_no + '">' + data.category + '</a></li>'
 				});
 				$('#nav').html(temp);
             },
