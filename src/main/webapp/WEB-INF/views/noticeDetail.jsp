@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,30 +87,32 @@
 			<table class="table table-bordered">
 				<tr>
 					<th>번호</th>
-					<td>${detail.n_no }
+					<td>${detail.n_no }</td>
 				</tr>
 				<tr>
 					<th>글쓴이</th>
-					<td>${detail.u_nickname }
+					<td>${detail.u_nickname }</td>
 				</tr>
 				<tr>
 					<th>작성일</th>
-					<td>${detail.n_date }
+					<fmt:parseDate value="${detail.n_date}" var="time" pattern="yyyy-MM-dd HH:mm:ss.S"/>
+					<fmt:formatDate value="${time}" var="time"  pattern="yyyy-MM-dd HH:mm:ss"/>
+					<td>${time }</td>
 				</tr>
 				<tr>
 					<th>조회수</th>
-					<td>${detail.n_count }
+					<td>${detail.n_count }</td>
 				</tr>
 				<tr>
 					<th>좋아요</th>
-					<td>${detail.n_like }
+					<td>${detail.n_like }</td>
 				</tr>
 				<tr>
 					<th>내용</th>
-					<td>${detail.n_content }
+					<td>${detail.n_content }</td>
 				</tr>
 				<tr>
-					<th>댓글</th>
+					<th style="vertical-align: middle;">댓글</th>
 					<td>
 						<c:if test="${sessionScope.nickname ne null }">
 							<div>
@@ -126,7 +129,9 @@
 							<c:when test="${fn:length(commentList) gt 0 }">
 								<c:forEach var="c" items="${commentList }">
 									<div>
-										${c.u_nickname } / ${c.nc_date }
+										<fmt:parseDate value="${c.nc_date}" var="time" pattern="yyyy-MM-dd HH:mm:ss.S"/>
+										<fmt:formatDate value="${time}" var="time"  pattern="yyyy-MM-dd HH:mm:ss"/>
+										${c.u_nickname } / ${time }
 									</div>
 									<div>
 										${c.nc_comment }
