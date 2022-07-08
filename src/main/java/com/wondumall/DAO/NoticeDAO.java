@@ -24,4 +24,8 @@ public class NoticeDAO {
 	public NoticeDTO getDetail(int n_no) {
 		return sqlSession.selectOne("notice.getDetail", n_no);
 	}
+
+	public int write(NoticeDTO noticeDTO) {
+		return sqlSession.insert("notice.write", noticeDTO);
+	}
 }

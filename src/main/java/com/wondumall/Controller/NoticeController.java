@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com..DTO.NoticeDTO;
 import com..DTO.NoticecommentDTO;
 import com..Service.NoticeCommentService;
 import com..Service.NoticeService;
@@ -62,6 +63,18 @@ public class NoticeController {
 			response.getWriter().println("<script> alert('댓글쓰기에 성공했습니다'); location.href='./noticeDetail.do?n_no="+ noticecommentDTO.getN_no() + "&pageNo=" + pageNo + "'</script>");
 		} else {
 			response.getWriter().println("<script> alert('댓글쓰기에 실패했습니다'); location.href='./noticeDetail.do?n_no="+ noticecommentDTO.getN_no() + "&pageNo=" + pageNo + "'</script>");
+		}
+	}
+	
+	@PostMapping("/noticeWrite.do")
+	public void noticeWrite(NoticeDTO noticeDTO, @RequestParam("pageNo") int pageNo, HttpServletResponse response) throws Exception{
+		System.out.println(noticeDTO);
+		int result = noticeService.write(noticeDTO);
+		response.setContentType("text/html; charset=UTF-8");
+		if(result>0) {
+			response.getWriter().println("<script> alert('공지사항 작성에 성공했습니다'); location.href='./notice.do?pageNo=" + pageNo + "'</script>");
+		} else {
+			response.getWriter().println("<script> alert('공지사항 작성에 실패했습니다'); location.href='./notice.do?pageNo=" + pageNo + "'</script>");
 		}
 	}
 }

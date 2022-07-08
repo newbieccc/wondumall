@@ -11,6 +11,7 @@
 		SELECT notice.*, user.u_nickname FROM notice 
 		JOIN user ON user.u_no = notice.u_no
 		WHERE n_del = 0
+		ORDER BY notice.n_no DESC
 		LIMIT #{firstIndex}, #{recordCountPerPage}
 	</select>
 	
@@ -19,4 +20,9 @@
 		JOIN user ON user.u_no = notice.u_no
 		WHERE n_no = #{n_no}
 	</select>
+	
+	<insert id="write" parameterType="noticeDTO">
+		INSERT INTO notice(n_title, n_content, u_no)
+		VALUES(#{n_title}, #{n_content}, (SELECT u_no FROM user WHERE u_nickname=#{u_nickname}))
+	</insert>
 </mapper>

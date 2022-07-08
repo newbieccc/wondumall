@@ -24,6 +24,10 @@ public class NoticeService {
 	public NoticeDTO getDetail(int n_no) {
 		return noticeDAO.getDetail(n_no);
 	}
+
+	public int write(NoticeDTO noticeDTO) {
+		return noticeDAO.write(noticeDTO);
+	}
 	
 	
 }

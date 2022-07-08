@@ -12,5 +12,6 @@
 		SELECT notice_comment.*, user.u_nickname FROM notice_comment
 		JOIN user ON user.u_no = notice_comment.u_no
 		WHERE n_no = #{n_no}
+		ORDER BY notice_comment.nc_no DESC
 	</select>	
 </mapper>

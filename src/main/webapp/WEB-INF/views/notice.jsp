@@ -39,6 +39,20 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+
+<!-- jQuery Plugins -->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/slick.min.js"></script>
+<script src="./js/nouislider.min.js"></script>
+<script src="./js/jquery.zoom.min.js"></script>
+<script src="./js/main.js"></script>
+
+
+<!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
 <style>
 	th, td{
 		text-align: center;
@@ -51,6 +65,11 @@
 	function linkPage(pageNo) {
 		location.href = "./notice.do?pageNo=" + pageNo;
 	}
+	$(document).ready(function() {
+		  $('#summernote').summernote({
+			  height: 400
+		  });
+	});
 </script>
 </head>
 <body>
@@ -110,6 +129,11 @@
 			<div style="text-align: center;">
 				<ui:pagination paginationInfo="${paginationInfo}" type="text" jsFunction="linkPage" />
 			</div>
+			<c:if test="${sessionScope.nickname ne null }">
+				<div style="float:right;">
+					<button type="button" onclick="showWriteDialog()">글쓰기</button>
+				</div>
+			</c:if>
 		</div>
 		<!-- /container -->
 	</div>
@@ -121,13 +145,35 @@
 	</footer>
 	<!-- /FOOTER -->
 
-	<!-- jQuery Plugins -->
-	<script src="./js/jquery.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
-	<script src="./js/slick.min.js"></script>
-	<script src="./js/nouislider.min.js"></script>
-	<script src="./js/jquery.zoom.min.js"></script>
-	<script src="./js/main.js"></script>
+<dialog id="noticeWriteDialog">
+	<div>
+		<form action="./noticeWrite.do" method="post">
+			<div style="padding-bottom: 10px;">
+				<h2><label>제목</label></h2>
+				<input style="width: 100%;" type="text" name="n_title" required>
+			</div>
+			<div style="padding-bottom: 10px;">
+				<h4><label>내용</label></h4>
+				<textarea id="summernote" name="n_content"></textarea>
+			</div>
+			<input type="hidden" name="pageNo" value="${pageNo }">
+			<input type="hidden" name="u_nickname" value="${sessionScope.nickname }">
+			<div>
+				<button type="submit">글쓰기</button>
+				<button type="button" onclick="hideWriteDialog()">닫기</button>
+			</div>
+		</form>
+	</div>
+</dialog>
+<script>
+var noticeWriteDialog = document.getElementById('noticeWriteDialog');
 
+function showWriteDialog(){
+	noticeWriteDialog.showModal();
+}
+function hideWriteDialog(){
+	noticeWriteDialog.close();
+}
+</script>
 </body>
 </html>
