@@ -19,8 +19,13 @@ public class HTMLTagFilter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-
-		chain.doFilter(new HTMLTagFilterRequestWrapper((HttpServletRequest) request), response);
+		HttpServletRequest req = (HttpServletRequest) request;
+        if(checkUrl(req)){
+            chain.doFilter(request, response);
+        }
+        else {
+            chain.doFilter(new HTMLTagFilterRequestWrapper((HttpServletRequest)request),            response);
+        }
 	}
 
 	public void init(FilterConfig config) throws ServletException {
@@ -30,4 +35,14 @@ public class HTMLTagFilter implements Filter {
 	public void destroy() {
 
 	}
+	
+	private boolean checkUrl(HttpServletRequest req) {
+        String uri = req.getRequestURI().toString().trim();
+        if(uri.startsWith("//noticeWrite.do")){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

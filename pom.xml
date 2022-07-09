@@ -39,6 +39,14 @@
 	</repositories>
 
 	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.15.2</version>
+		</dependency>
+
 		<!-- jackson-core -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>

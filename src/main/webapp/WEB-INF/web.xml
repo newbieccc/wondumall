@@ -65,4 +65,5 @@
 		<filter-name>HTMLTagFilter</filter-name>
 		<url-pattern>*.do</url-pattern>
 	</filter-mapping>
+	
 </web-app>
