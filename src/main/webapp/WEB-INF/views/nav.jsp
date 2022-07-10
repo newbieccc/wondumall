@@ -29,14 +29,6 @@
 		<!-- NAV -->
 		<ul class="main-nav nav navbar-nav" id="nav">
 		</ul>
-		<c:choose>
-			<!-- 로그인 했을 경우 u_confirm이 사업자라면 '0' -->
-			<c:when test="">
-				<ul class="main-nav nav navbar-nav" style="text-align: right;">제품 등록</ul>
-			</c:when>		
-			<c:otherwise>
-			</c:otherwise>
-		</c:choose>
 		<!-- /NAV -->
 	</div>
 	<!-- /responsive-nav -->
