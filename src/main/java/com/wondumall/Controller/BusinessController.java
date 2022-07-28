@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,12 +26,14 @@ public class BusinessController {
 	@Autowired
 	private BusinessService businessService;
 	
+	@Secured("ROLE_BUISNESS")
 	@GetMapping(value = "/buisness/index.do")
 	public String businessIndex() {
 		
 		return "businessIndex";
 	}
 	
+	@Secured("ROLE_BUISNESS")
 	@PostMapping(value = "/buisness/couponWrite.do")
 	public void businessCoupon(CouponDTO dto, @RequestParam(name = "pageNo", defaultValue = "1") int pageNo, HttpServletResponse response) throws Exception {
 		
@@ -46,6 +49,7 @@ public class BusinessController {
 		}
 	}
 	
+	@Secured("ROLE_BUISNESS")
 	@GetMapping(value = "/buisness/coupon.do")
 	public ModelAndView businessCoupon(@RequestParam(name = "pageNo", required = false, defaultValue = "1") int pageNo, @RequestParam(name="searchColumn", required = false) String searchColumn,
 			@RequestParam(name="searchValue", required=false) String searchValue) {
@@ -82,6 +86,7 @@ public class BusinessController {
 		return mv;
 	}
 	
+	@Secured("ROLE_BUISNESS")
 	@GetMapping(value = "/buisness/coupondel/{coupon_no}")
 	public String coupondel(@PathVariable("coupon_no") int coupon_no) {
 		
@@ -92,6 +97,7 @@ public class BusinessController {
 		return "redirect:/buisness/coupon.do";
 	}
 	
+	@Secured("ROLE_BUISNESS")
 	@GetMapping(value = "/buisness/couponrepair/{coupon_no}")
 	public String qrpr(@PathVariable("coupon_no") int coupon_no) {
 		
@@ -102,6 +108,7 @@ public class BusinessController {
 		return "redirect:/buisness/coupon.do";
 	}
 	
+	@Secured("ROLE_BUISNESS")
 	@GetMapping(value = "/buisness/couponcdel/{coupon_no}")
 	public String qcompledel(@PathVariable("coupon_no") int coupon_no) {
 		
