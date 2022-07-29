@@ -64,7 +64,8 @@ public class SecurityConfig {
 		
 		http.authorizeRequests()
 			.antMatchers("/admin*/**").access("hasRole('ROLE_ADMIN')")
-			.antMatchers("/buisness*/**").access("hasRole('ROLE_BUISNESS')");
+			.antMatchers("/buisness*/**").access("hasRole('ROLE_BUISNESS')")
+			.antMatchers("/mypage/**").authenticated();
 		
 		http.csrf().disable().formLogin().loginPage("/login.do").loginProcessingUrl("/login.do")
 				.usernameParameter("u_email").passwordParameter("u_pw").defaultSuccessUrl("/")
