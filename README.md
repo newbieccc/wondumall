@@ -16,7 +16,11 @@
 ## 01. 주요 코드
 
 - **[상품컨트롤러.java](https://github.com/newbieccc/wondumall/blob/main/src/main/java/com/wondumall/Controller/ProductController.java)**
-- [상품_SQL.xml](https://github.com/newbieccc/wondumall/blob/main/src/main/resources/mapper/product_SQL.xml)
+- **[상품_SQL.xml](https://github.com/newbieccc/wondumall/blob/main/src/main/resources/mapper/product_SQL.xml)**
+- [상품등록.jsp](https://github.com/newbieccc/wondumall/blob/main/src/main/webapp/WEB-INF/views/productAdd.jsp)
+- [상품카테고리.jsp](https://github.com/newbieccc/wondumall/blob/main/src/main/webapp/WEB-INF/views/category.jsp)
+- [상품페이지.jsp](https://github.com/newbieccc/wondumall/blob/main/src/main/webapp/WEB-INF/views/productDetail.jsp)
+- [장바구니.jsp](https://github.com/newbieccc/wondumall/blob/main/src/main/webapp/WEB-INF/views/cart.jsp)
 
 ## 02 주요 화면
 
