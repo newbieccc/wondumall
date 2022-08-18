@@ -46,13 +46,14 @@
 
 ## 03. 개발 환경
 
-- JDK 11.0.15
-- Spring 5.3.6
+- Spring Framework 5.3.6
+- Oracle JDK 11.0.15
 - Spring Tool Suite 3.9.18
 - Spring Security 5.7.2
-- Javascript ES5
+- OAuth 2.0
 - Apache Tomcat 9
-- MyBatis 3.5.6
+- import 1.1.5 (결제API)
+- MariaDB 10
   
 ## 04. 돌이켜보니 좋았던 점
 
