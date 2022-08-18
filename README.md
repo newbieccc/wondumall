@@ -12,6 +12,17 @@
   - 사업자가 커피 상품을 등록하고 고객이 상품을 구매할 수 있도록 제공하는 중개 서비스
   - 역할자 - 관리자, 고객, 사업자
   - 참고한 서비스: 일반 커피 쇼핑몰
+- **개발 기간**
+  - 2022.07.05 ~ 2022.08.02
+- **개발 환경**
+  - Spring Framework 5.3.6
+  - Oracle JDK 11.0.15
+  - Spring Tool Suite 3.9.18
+  - Spring Security 5.7.2
+  - OAuth 2.0
+  - Apache Tomcat 9
+  - import 1.1.5 (결제API)
+  - MariaDB 10
 
 ## 01. 주요 코드
 
@@ -39,21 +50,6 @@
 - **장바구니**
 
   ![cart](/src/main/webapp/resources/screenshot/cart.png)
-
-## 02. 개발 기간
-
-- 2022.07.05 ~ 2022.08.02
-
-## 03. 개발 환경
-
-- Spring Framework 5.3.6
-- Oracle JDK 11.0.15
-- Spring Tool Suite 3.9.18
-- Spring Security 5.7.2
-- OAuth 2.0
-- Apache Tomcat 9
-- import 1.1.5 (결제API)
-- MariaDB 10
   
 ## 04. 돌이켜보니 좋았던 점
 
