@@ -38,14 +38,20 @@
 - **상품 등록**
 
   ![productAdd](/src/main/webapp/resources/screenshot/productAdd.png)
+  
+<hr>
 
 - **상품 카테고리**
 
   ![category](/src/main/webapp/resources/screenshot/category.png)
 
+<hr>
+
 - **상품 페이지**
 
   ![productDetail](/src/main/webapp/resources/screenshot/productDetail.png)
+
+<hr>
 
 - **장바구니**
 
